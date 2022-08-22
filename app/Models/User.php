@@ -41,4 +41,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Episode 54 roles
+    public function roles(){
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function assignRole($role){
+        // $this->roles()->save($role);
+        $this->roles()->sync($role, false);
+
+        // wywpłanie : $user->assignRole($moderator)
+    }
+
+    public function abilities(){
+        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
+    }
 }

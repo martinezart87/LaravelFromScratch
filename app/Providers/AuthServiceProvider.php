@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
 use App\Models\Conversation;
+use App\Models\Ability;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -33,5 +34,9 @@ class AuthServiceProvider extends ServiceProvider
         //     return $conversation->user->is($user);
         // });
         
+        // Roles and abilities from table
+        Gate::before(function( $user,  $ability){
+            return $user->abilities()->contains($ability);
+        });
     }
 }

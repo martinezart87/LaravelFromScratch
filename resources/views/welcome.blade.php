@@ -27,6 +27,10 @@
                 <li><a href="{{ url('/sendnotify') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Send Notify</a></li>
                 <li><a href="{{ url('/testevent') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Test Event</a></li>
                 <li><a href="{{ url('/conversations') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Conversations</a></li>
+                
+                @can('edit_forum')
+                <li><a href="{{ url('/edit_forum') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Edit Forum (Episode 54 Roles and Abilities)</a></li>
+                @endcan
             </ul>
             
             <ul>

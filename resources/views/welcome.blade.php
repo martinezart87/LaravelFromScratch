@@ -26,11 +26,12 @@
                 <li><a href="{{ url('/sendmail') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Send Mail</a></li>
                 <li><a href="{{ url('/sendnotify') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Send Notify</a></li>
                 <li><a href="{{ url('/testevent') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Test Event</a></li>
+                <li><a href="{{ url('/conversations') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Conversations</a></li>
             </ul>
             
             <ul>
                 <li><a href="{{ url('/register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Register new user</a></li>
-                <li><a href="{{ url('/register') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a></li>
+                <li><a href="{{ url('/login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a></li>
             </ul>
             
             

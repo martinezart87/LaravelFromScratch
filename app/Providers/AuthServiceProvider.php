@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Http\Controllers\TestEventsController;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\User;
+use App\Models\Conversation;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -26,9 +28,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // Gate::define('test-event', function(User $user, TestEventsController $testevent){
-        //     return true;
+        // If Gate
+        // Gate::define('replay', function(User $user, Conversation $conversation){
+        //     return $conversation->user->is($user);
         // });
-        //
+        
     }
 }

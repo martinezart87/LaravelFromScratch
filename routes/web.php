@@ -44,8 +44,9 @@ Route::post('/sendnotify', '\App\Http\Controllers\SendNotificationController@sto
 Route::get('/testevent', '\App\Http\Controllers\TestEventsController@show');
 Route::post('/testevent', '\App\Http\Controllers\TestEventsController@store');
 
-Route::get('/conversations', '\App\Http\Controllers\Conversations@index');
-Route::get('/conversations/{conversation}', '\App\Http\Controllers\Conversations@show');
+Route::get('/conversations', '\App\Http\Controllers\ConversationsController@index');
+Route::get('/conversations/{conversation}', '\App\Http\Controllers\ConversationsController@show');
+Route::post('/reply', '\App\Http\Controllers\RepliesController@store');
 
 
 Auth::routes();

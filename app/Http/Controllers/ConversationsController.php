@@ -16,6 +16,10 @@ class ConversationsController extends Controller
     public function show(Conversation $conversation){
         return view('conversations.show', [
             'conversation' => $conversation
-        ])
+        ]);
+    }
+
+    public function store(){
+        dd(request()->all());
     }
 }

@@ -45,7 +45,10 @@ Route::get('/testevent', '\App\Http\Controllers\TestEventsController@show');
 Route::post('/testevent', '\App\Http\Controllers\TestEventsController@store');
 
 Route::get('/conversations', '\App\Http\Controllers\ConversationsController@index');
-Route::get('/conversations/{conversation}', '\App\Http\Controllers\ConversationsController@show');
+
+// Authorization middleware can view 
+Route::get('/conversations/{conversation}', '\App\Http\Controllers\ConversationsController@show')->middleware('can:view,conversation');
+
 Route::post('/reply', '\App\Http\Controllers\RepliesController@store');
 
 

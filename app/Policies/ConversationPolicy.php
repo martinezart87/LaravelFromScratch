@@ -10,6 +10,16 @@ class ConversationPolicy
 {
     use HandlesAuthorization;
 
+    // public function before(User $user){
+    //     // if($user->id === 1){ // admin - dostęp do wszystkich
+    //     //     return true;
+    //     // }
+    //     // inny zapis
+    //     return $user->id === 1;
+
+    //     // if true then, next function is not perform
+    // }
+
     /**
      * Determine whether the user can view any models.
      *
@@ -30,7 +40,7 @@ class ConversationPolicy
      */
     public function view(User $user, Conversation $conversation)
     {
-        //
+        return $conversation->user->is($user);
     }
 
     /**
